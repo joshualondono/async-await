@@ -1,34 +1,4 @@
 
-
-// //Push
-// const target = { mutated: true };
-// console.log(target);
-
-// const source = { a: 1, b: 3 };
-// const returnedTarget = Object.assign(target, source);
-// console.log(target);
-
-
-
-
-
-
-
-
-
-// const sourcez = { a: 1, b: 3333 };
-// const targetz = sourcez;
-// //sourcez = { c: 1, z: 3333 };
-// //console.log(targetz);
-
-
-// //
-// const foo = [1, 2];
-// const bar = foo;
-// bar[0] = 'hi';
-// console.log(foo);
-
-
 // Write an async function getUsersEmails
 // Using fetch, it should call the given url
 // const url1 = 'https://randomuser.me/api/?results=10';
@@ -48,15 +18,17 @@
 // jake.owens@example.com
 
 
-// async function  getUsersEmails() {
-//   console.log('calling');
-//   const result =  await fetch('https://randomuser.me/api/?results=10')
-//     .then(res => res.json())
-//     .then(json => json.results)
-//     .then(json => json.map(account => account.email))
-//   console.log(result);
-//   // expected output: "resolved"
-// }
+async function  getUsersEmails() {
+  const fetch = require('node-fetch');
+
+  console.log('calling');
+  const result =  await fetch('https://randomuser.me/api/?results=10')
+    .then(res => res.json())
+    .then(json => json.results)
+    .then(json => json.map(account => account.email))
+  console.log(result);
+  // expected output: "resolved"
+}
 
 // getUsersEmails()
 
@@ -99,3 +71,4 @@ const getTitle = () => {
 }
 
 getTitle()
+getUsersEmails()
